@@ -13,6 +13,8 @@ RUN echo y | android-sdk-linux/tools/bin/sdkmanager "platform-tools" >/dev/null
 RUN echo y | android-sdk-linux/tools/bin/sdkmanager "build-tools;$ANDROID_BUILD_TOOLS" >/dev/null
 RUN export ANDROID_HOME=$PWD/android-sdk-linux
 RUN export PATH=$PATH:$PWD/android-sdk-linux/platform-tools/
+RUN echo $ANDROID_HOME
+RUN echo $PATH
 RUN chmod +x ./gradlew
 RUN set +o pipefail
 RUN yes | android-sdk-linux/tools/bin/sdkmanager --licenses
